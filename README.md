@@ -27,26 +27,6 @@ The code consists of three main functions:
 
 - Modify the controller gains (`Kc1`, `Kc2`, `Kc3`) as needed for your specific application.
 
-## Methodology
-
-### Frequency and Phase Estimation
-
-The `estimateFrequencyAndTheta` function uses a zero-crossing method to estimate the frequency and phase angle of the three-phase voltage signal. It calculates the zero-crossings, and the estimated frequency (F_est) is given by:
-
-\[ F_{est} = \frac{1}{\text{period}} \]
-
-where the period is determined from the zero-crossings.
-
-The estimated phase angle (Theta_est) is calculated as a fraction of the signal period:
-
-\[ \Theta_{est} = \frac{\text{phase fraction} \times 360.0}{\text{period}} \]
-
-### Harmonic Amplitude Estimation
-
-The `getHarmonicAmplitudes` function calculates the amplitude of the harmonic series up to the 5th harmonic for each phase. It determines the highest value (amplitude) in each array, calculates the average amplitude, and multiplies each average amplitude by the harmonic number to obtain the harmonic amplitudes:
-
-\[ \text{Harmonic}_i = i \times \text{avgAmplitude} \]
-
 ## Example Data
 
 The code includes example three-phase voltage signal data (`Va`, `Vb`, `Vc`) sampled at a frequency of 1 kHz. You can replace this data with your own three-phase voltage samples.
